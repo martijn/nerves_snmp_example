@@ -1,5 +1,14 @@
 # NervesSnmpExample
 
+By Martijn Storck <martijn@lico.nl>
+
+Original source: <https://gitub.com/martijn/nerves_snmp_example/>
+
+This example Nerves application shows how to implement an SNMP agent (server)
+using Erlang's built-in SNMP functionality.
+
+SNMP is an lightweight alternative to HTTP-based management for Nerves applications.
+
 To start your Nerves app:
 
   * Install dependencies with `mix deps.get`
