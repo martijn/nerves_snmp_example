@@ -1,0 +1,92 @@
+NERVES-EXAMPLE-MIB DEFINITIONS ::= BEGIN
+
+          IMPORTS
+                  RowStatus      FROM SNMPv2-TC
+                  DisplayString  FROM RFC1213-MIB
+                  OBJECT-TYPE    FROM RFC-1212
+                  experimental, Integer32   FROM SNMPv2-SMI
+                  ;
+ 
+          gpio       OBJECT IDENTIFIER ::= { experimental 1 }
+ 
+          myName OBJECT-TYPE
+              SYNTAX  DisplayString (SIZE (0..255))
+              ACCESS  read-write
+              STATUS  mandatory
+              DESCRIPTION
+                      "My own name"
+              ::= { gpio 1 }
+
+          gpioValue OBJECT-TYPE
+              SYNTAX  Integer32
+              ACCESS  read-only
+              STATUS  mandatory
+              DESCRIPTION
+                      "Current value of GPIO pin"
+              ::= { gpio 2 }
+
+---          friendsTable OBJECT-TYPE
+---              SYNTAX  SEQUENCE OF FriendsEntry
+---              ACCESS  not-accessible
+---              STATUS  mandatory
+---              DESCRIPTION
+---                      "A list of friends."
+---              ::= { gpio 4 }
+--- 
+---          friendsEntry OBJECT-TYPE
+---              SYNTAX  FriendsEntry
+---              ACCESS  not-accessible
+---              STATUS  mandatory
+---              DESCRIPTION
+---                      ""
+---              INDEX   { fIndex }
+---              ::= { friendsTable 1 }
+--- 
+---          FriendsEntry ::=
+---              SEQUENCE {
+---            fIndex
+---                      INTEGER,
+---                   fName
+---                      DisplayString,
+---                   fAddress
+---                      DisplayString,
+---                   fStatus
+---                      RowStatus              }
+--- 
+---          fIndex OBJECT-TYPE
+---              SYNTAX  INTEGER
+---              ACCESS  not-accessible
+---              STATUS  mandatory
+---               DESCRIPTION
+---                      "number of friend"
+---              ::= { friendsEntry 1 }
+--- 
+---          fName OBJECT-TYPE
+---              SYNTAX  DisplayString (SIZE (0..255))
+---              ACCESS  read-write
+---              STATUS  mandatory
+---              DESCRIPTION
+---                      "Name of friend"
+---              ::= { friendsEntry 2 }
+---          fAddress OBJECT-TYPE
+---              SYNTAX  DisplayString (SIZE (0..255))
+---              ACCESS  read-write
+---              STATUS  mandatory
+---              DESCRIPTION
+---                      "Address of friend"
+---              ::= { friendsEntry 3 }
+---           fStatus OBJECT-TYPE
+---              SYNTAX      RowStatus
+---              ACCESS      read-write
+---              STATUS      mandatory
+---              DESCRIPTION
+---                      "The status of this conceptual row."
+---              ::= { friendsEntry 4 }
+---          fTrap TRAP-TYPE
+---              ENTERPRISE  gpio
+---              VARIABLES   { myName, fIndex }
+---              DESCRIPTION
+---                          "This trap is sent when something happens to
+---         the friend specified by fIndex."
+---              ::= 1
+END

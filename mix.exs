@@ -23,7 +23,7 @@ defmodule NervesSnmpExample.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {NervesSnmpExample, []},
-     applications: [:logger]]
+     applications: [:logger, :snmp]]
   end
 
   def deps do

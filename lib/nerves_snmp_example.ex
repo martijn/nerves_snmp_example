@@ -6,6 +6,9 @@ defmodule NervesSnmpExample do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
+    [ok: _] = Enum.map(['./snmp/mib/NERVES-EXAMPLE-MIB'], &(:snmpc.compile(&1)))
+    :ok = :snmpa.load_mibs(:snmp_master_agent, ['NERVES-EXAMPLE-MIB'])
+
     # Define workers and child supervisors to be supervised
     children = [
       # worker(NervesSnmpExample.Worker, [arg1, arg2, arg3]),

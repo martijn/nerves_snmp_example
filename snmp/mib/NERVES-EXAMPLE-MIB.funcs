@@ -1,0 +1,2 @@
+{myName, {'Elixir.NervesSnmpExample', my_name, []}}.
+{gpioValue, {'Elixir.NervesSnmpExample', gpio_value, []}}.

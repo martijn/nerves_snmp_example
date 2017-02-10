@@ -10,3 +10,7 @@
 
 # Generate on crash by the VM
 erl_crash.dump
+
+# SNMP database and compiled MIBs
+/snmp/db
+*-MIB.bin
