@@ -1,0 +1,6 @@
+%{"distillery": {:hex, :distillery, "1.1.0", "e9943bd29557e9c252a051d8ac4b47e597cd9bf2a74332b8628eab4954eb51d7", [:mix], []},
+  "nerves": {:hex, :nerves, "0.4.7", "c8d08348e6f717cf140da26dc374bcf2f6f7c2bec646073aeab049e08b588173", [:mix], [{:distillery, "~> 1.0", [hex: :distillery, optional: false]}]},
+  "nerves_system_br": {:hex, :nerves_system_br, "0.9.4", "5096a9dfec49d4663ccb94c4a4fe45885303fbf31108f7e9400369bdec94b5e7", [:mix], []},
+  "nerves_system_rpi": {:hex, :nerves_system_rpi, "0.10.0", "8e5220abd416ccebec8ccef514167a1a39ea232ebf11ed1465754abd725b67fc", [:mix], [{:nerves, "~> 0.4.0", [hex: :nerves, optional: false]}, {:nerves_system_br, "~> 0.9.2", [hex: :nerves_system_br, optional: false]}, {:nerves_toolchain_armv6_rpi_linux_gnueabi, "~> 0.9.0", [hex: :nerves_toolchain_armv6_rpi_linux_gnueabi, optional: false]}]},
+  "nerves_toolchain_armv6_rpi_linux_gnueabi": {:hex, :nerves_toolchain_armv6_rpi_linux_gnueabi, "0.9.0", "11618febee06ceb16eae5833e0df331599c135727630e1aedec7b2677a5fa9dc", [:mix], [{:nerves, "~> 0.4.0", [hex: :nerves, optional: false]}, {:nerves_toolchain_ctng, "~> 0.8.0", [hex: :nerves_toolchain_ctng, optional: false]}]},
+  "nerves_toolchain_ctng": {:hex, :nerves_toolchain_ctng, "0.8.0", "6dff7ed51e1711c5f4da3d559bc528a8265e3dd950dda95f4d6832aed9dbe320", [:mix], []}}
